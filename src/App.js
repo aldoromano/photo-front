@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import {} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Classer from "./components/Classer";
+import AffecterCritere from "./components/AffecterCritere";
+import Consulter from "./components/Consulter";
+import Parametrer from "./components/Parametrer";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path="/classer" element={<Classer></Classer>}></Route>
+        <Route
+          path="/affecter-critere"
+          element={<AffecterCritere></AffecterCritere>}
+        ></Route>
+        <Route path="/consulter" element={<Consulter></Consulter>}></Route>
+        <Route path="/parametrer" element={<Parametrer></Parametrer>}></Route>
+      </Routes>
+    </Router>
   );
 }
 
